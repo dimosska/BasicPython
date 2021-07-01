@@ -1,5 +1,5 @@
-from person import Person
-from company import Company
+from .person import Person
+from .company import Company
 
 p1 = Person('John', 'Doe')
 p2 = Person('James', 'Smith')
