@@ -1,24 +1,29 @@
 class Person:
-    is_manager = False
+    role = 'Person'
 
     def __init__(self, first_name, second_name):
         self.first_name = first_name
         self.second_name = second_name
 
     def full_name(self):
-        print(f'{self.first_name} {self.second_name}')
+        return(f'{self.first_name} {self.second_name}')
 
+    def description(self):
+        print(f'{self.role} - {self.full_name()}')
 
 class Manager(Person):
-    is_manager = True
     role = 'Manager'
 
 
-p1 = Person('John', 'Doe')
-p1.full_name()
-print(p1.is_manager)
+class Administrator(Person):
+    role = 'Administrator'
 
 
-p2 = Manager('Jack', 'Smith')
-p2.full_name()
-print(p2.is_manager)
+class Developer(Person):
+    role = 'Developer'
+
+
+Person('John', 'Doe').description()
+Manager('James', 'Smith').description()
+Administrator('Test', 'Admin').description()
+Developer('Python', '3').description()
